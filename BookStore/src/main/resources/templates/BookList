@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<table class="table table-striped">
+<tr>
+<th>Name</th>
+<th>Email</th>
+</tr>
+<tr th:each = "student : ${students}">
+<td th:text="${student.firstName} + ' ' + ${student.lastName}"></td>
+<td th:text="${student.email}"></td>
+</tr>
+<tr th:each =
+"student : ${students}">
+<td th:text="${student.firstName} + ' ' + ${student.lastName}"></td>
+<td th:text="${student.email}"></td>
+<td th:text="${student.department.name}"></td>
+<td><a th:href="@{/delete/{id}(id=${student.id})}">Delete</a></td>
+</tr>
+</table>

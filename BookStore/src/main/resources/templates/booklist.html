@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Server Programming with Spring Boot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<table class="table table-striped">
+<tr>
+<th>Author</th>
+<th>Name</th>
+<th>Isbn</th>
+<th>Price</th>
+
+
+</tr>
+<tr th:each = "book : ${books}">
+<td th:text="${book.author} + ' ' + ${book.title} + ' '+${book.isbn} +' '+ ${book.year} + ' '+${book.category.name} "></td>
+<td><a th:href="@{delete/{id}(id=${book.id})}" >Delete</a></td>
+
+
+</tr>
+</table>
+ <a href="/addbook">Add Books</a>    	
+</body>
+</html>
